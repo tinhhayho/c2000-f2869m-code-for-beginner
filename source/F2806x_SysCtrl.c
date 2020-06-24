@@ -161,7 +161,7 @@ void InitPll(Uint16 val, Uint16 divsel)
       EDIS;
       // Replace this line with a call to an appropriate
       // SystemShutdown(); function.
-     __asm("        ESTOP0");     // Uncomment for debugging purposes
+      // __asm("        ESTOP0");     // Uncomment for debugging purposes
    }
 
    // DIVSEL MUST be 0 before PLLCR can be changed from

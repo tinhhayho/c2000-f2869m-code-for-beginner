@@ -249,7 +249,6 @@ void Gpio_setup1(void)
    GpioCtrlRegs.GPBMUX1.bit.GPIO33 = 1;  // GPIO33 = SCLA
 */
    // Make GPIO34 an input
-   GpioDataRegs.GPACLEAR.bit.GPIO30 = 2;
    GpioCtrlRegs.GPBPUD.bit.GPIO34 = 0;  // Enable pullup on GPIO34
    GpioCtrlRegs.GPBMUX1.bit.GPIO34 = 0; // GPIO34 = GPIO34
    GpioDataRegs.GPBSET.bit.GPIO34 = 1; // output latch = high
