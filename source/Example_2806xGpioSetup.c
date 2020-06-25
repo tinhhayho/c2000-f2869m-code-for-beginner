@@ -64,6 +64,7 @@ void main(void)
 // Disable CPU interrupts and clear all CPU interrupt flags:
    IER = 0x0000;
    IFR = 0x0000;
+   
 
 // Initialize the PIE vector table with pointers to the shell Interrupt
 // Service Routines (ISR).
@@ -72,7 +73,9 @@ void main(void)
 // The shell ISR routines are found in F2806x_DefaultIsr.c.
 // This function is found in F2806x_PieVect.c.
    InitPieVectTable();
-
+   // re-mapping lai vector interrupt
+   EALLOW;
+   PieVectTable.TINT0- =&cpu_timer
 
 // Step 4. Initialize all the Device Peripherals:
 // This function is found in F2806x_InitPeripherals.c

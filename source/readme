@@ -1,0 +1,7 @@
+// Nguyen Trung Tinh
+// hcmut
+// 2020
+clock configure duoc viet trong F2806x_SysCtrl.c 
+SysClkOut = 90MHz
+   // Select Internal Oscillator 1 as Clock Source (default), and turn off all unused clocks to
+   // conserve power.
