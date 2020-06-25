@@ -16,7 +16,7 @@ void InitCpuTimer(void)
 {
     CpuTimer0.RegsAddr = &CpuTimer0Regs;
     // initialize timer period to maximum
-    CpuTimer0Regs.PRD.all  = oxFFFFFFFF;
+    CpuTimer0Regs.PRD.all  = 0xFFFFFFFF;
     // initialize pre-scale counter to divide by 1
     CpuTimer0Regs.TPR.all = 0;
     CpuTimer0Regs.TPRH.all =0;
@@ -30,7 +30,7 @@ void ConfigCpuTimer(struct CPUTIMER_VARS *Timer, float Freg, float Period)
     Uint32 PeriodInClocks;
 
     // initialze timer period
-    Timer->CPUFreqInMHz = Freq;
+    Timer->CPUFreqInMHz = Freg;
     Timer->PeriodInUSec = Period;
     PeriodInClocks = (long)(Freg*Period);
     Timer->RegsAddr->PRD.all = PeriodInClocks - 1; // Counter decrements PRD+1 times each period
